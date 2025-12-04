@@ -1,5 +1,23 @@
 # Assignment 14 - Complete BREAD Functionality for Calculations
 
+This repository is a dockerized web calculator application, which uses SQLAlchemy and Pydantic to validate new users and add them to a Postgres database. This version of the APP implements BREAD endpoints for the calculations: 
+- **Browse (GET /calculations)**: Retrieve and display all calculations belonging to the logged-in user.
+
+- **Read (GET /calculations/{id})**: Retrieve details of a specific calculation by its ID.
+
+- **Edit (PUT /calculations/{id} or PATCH /calculations/{id})**: Update fields of an existing calculation.
+
+- **Add (POST /calculations)**: Create a new calculation by specifying the operation and operands.
+
+- **Delete (DELETE /calculations/{id})**: Remove a calculation by its ID.
+
+
+The application also includes comprehensive testing for the calculator operations as well as for managing and validating the addition of new users to the database. The application features a `Calculation` model and schema that uses the Factory design pattern to instantiate different calculation types that are stored in the postgres database with the user fields. The `create` method of the `Calculation` class in instantiated as an abstract method and then each calculation type is a subclass of that method. 
+
+Additionally, the application includes comprehensive testing for the integration of the different database models and unit testing for the different calculation types. The application has docker containers for connecting to a postgres database server, accessing the pgAdmin dashboard, and running the application with all of its dependencies. You can view the DockerHub repository below. 
+
+DockerHub Repository: https://hub.docker.com/repository/docker/collinjennings/assignment14/general
+
 # 📦 Project Setup
 
 ---
